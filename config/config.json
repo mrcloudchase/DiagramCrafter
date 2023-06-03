@@ -1,0 +1,110 @@
+{
+    "mg_labels": ["MG1", "MG2"],
+    "aad_label": "AAD",
+    "mg_subs_dict": {
+        "MG1": ["Sub1", "Sub2"],
+        "MG2": ["Sub3", "Sub4"]
+    },
+    "sub_labels": ["Sub1", "Sub2", "Sub3", "Sub4"],
+    "sub_rg_dict": {
+        "Sub1": ["RG1", "RG2"],
+        "Sub2": ["RG3", "RG4"],
+        "Sub3": ["RG5", "RG6"],
+        "Sub4": ["RG7", "RG8"]
+    },
+    "rg_resources_dict": {
+        "RG1": [
+            {
+                "type": "vm",
+                "name": "VM1"
+            },
+            {
+                "type": "storage_account",
+                "name": "SA1"
+            },
+            {
+                "type": "web_app",
+                "name": "App1"
+            },
+            {
+                "type": "vm",
+                "name": "VM2"
+            },
+            {
+                "type": "storage_account",
+                "name": "SA2"
+            }
+        ],
+        "RG2": [
+            {
+                "type": "web_app",
+                "name": "App2"
+            },
+            {
+                "type": "vm",
+                "name": "VM3"
+            },
+            {
+                "type": "storage_account",
+                "name": "SA3"
+            },
+            {
+                "type": "web_app",
+                "name": "App3"
+            },
+            {
+                "type": "vm",
+                "name": "VM4"
+            }
+        ],
+        "RG3": [
+            {
+                "type": "storage_account",
+                "name": "SA4"
+            },
+            {
+                "type": "web_app",
+                "name": "App4"
+            },
+            {
+                "type": "vm",
+                "name": "VM5"
+            },
+            {
+                "type": "storage_account",
+                "name": "SA5"
+            },
+            {
+                "type": "web_app",
+                "name": "App5"
+            }
+        ],
+        "RG4": [
+            {
+                "type": "vm",
+                "name": "VM6"
+            },
+            {
+                "type": "storage_account",
+                "name": "SA6"
+            },
+            {
+                "type": "web_app",
+                "name": "App6"
+            },
+            {
+                "type": "vm",
+                "name": "VM7"
+            },
+            {
+                "type": "storage_account",
+                "name": "SA7"
+            }
+        ]
+    },
+    "resource_mapping": {
+        "vm": ["compute", "VM"],
+        "storage_account": ["storage", "StorageAccounts"],
+        "web_app": ["web", "AppServices"]
+    }
+}

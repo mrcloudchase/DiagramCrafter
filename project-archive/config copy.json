@@ -1,0 +1,32 @@
+{
+  "aad_label": "AAD",
+  "mg_labels": ["MG1", "MG2"],
+  "sub_labels": ["Sub1", "Sub2", "Sub3"],
+  "rg_labels": ["RG1", "RG2", "RG3", "RG4", "RG5"],
+  "resources:": [
+    { "type": "vm", "name": "VM1" },
+    { "type": "storage_account", "name": "SA1" },
+    { "type": "web_app", "name": "WebApp1" },
+    { "type": "vm", "name": "VM2" },
+    { "type": "storage_account", "name": "SA2" },
+    { "type": "web_app", "name": "WebApp2" },
+    { "type": "vm", "name": "VM3" }
+  ],
+  "supported_resources": ["vm", "storage_account", "web_app"],
+  "mg_subs_dict": {
+    "MG1": ["Sub1", "Sub2"],
+    "MG2": ["Sub3"]
+  },
+  "sub_rg_dict": {
+    "Sub1": ["RG1", "RG2"],
+    "Sub2": ["RG3"],
+    "Sub3": ["RG4", "RG5"]
+  },
+  "rg_resources_dict": {
+    "RG1": ["VM1", "SA1"],
+    "RG2": ["WebApp1"],
+    "RG3": ["VM2", "SA2"],
+    "RG4": ["WebApp2"],
+    "RG5": ["VM3"]
+  }
+}
