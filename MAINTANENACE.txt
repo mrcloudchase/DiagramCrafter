@@ -1,16 +1,15 @@
-Managing the Python Script and Configuration File
-Python Script (diagram.py)
-This script is responsible for creating diagrams of your Azure architecture based on the data specified in the config.json file.
+Managing the Diagram Crafter and Configuration File
+This Python App is responsible for creating diagrams of your Azure architecture based on the data specified in the config.json file.
 
 How to Update
 Adding New Azure Services: If you want to add a new Azure service to be diagrammed, you'll need to add a mapping for it in the resource_mapping section of config.json (see the config.json update section below). Then, you can add this service to the rg_resources_dict section of config.json.
 
-Changing Diagram Structure: If you want to change the structure of the diagrams (e.g., adding a new level of hierarchy, changing the way elements are grouped, etc.), you would need to modify the functions in the Python script that create these diagrams (create_management_groups, create_aad_cluster, create_subscriptions, create_resource_groups, create_resources).
+Changing Diagram Structure: If you want to change the structure of the diagrams (e.g., adding a new level of hierarchy, changing the way elements are grouped, etc.), you would need to modify the functions in the python code in `azure_diagrams.py` that create these diagrams (create_management_groups, create_aad_cluster, create_subscriptions, create_resource_groups, create_resources).
 
 Handling Errors and Validation: The script includes a basic validation check to ensure that all subscriptions are correctly mapped across mg_subs_dict, sub_labels, and sub_rg_dict. If you want to add more validations or handle specific errors, you can modify or extend this part of the script.
 
 Configuration File (config.json)
-This JSON file contains the data used by the Python script to create the diagrams. It includes labels for various elements (e.g., management groups, subscriptions, resource groups), mappings of these elements to each other, and a mapping of resource types to their corresponding Python classes in the Diagrams library.
+This JSON file contains the data used by the app to create the diagrams. It includes labels for various elements (e.g., management groups, subscriptions, resource groups), mappings of these elements to each other, and a mapping of resource types to their corresponding Python classes in the Diagrams library.
 
 How to Update
 Adding New Azure Services: If you want to add a new Azure service to be diagrammed, first find the module name and class name of this service in the Diagrams library documentation. Then, add a new entry to the resource_mapping section with the resource type as the key and a list containing the module name and class name as the value.
@@ -20,14 +19,3 @@ Adding New Elements: To add a new management group, add its label to the mg_labe
 Updating Existing Elements: To change the label of an existing element, update its label in the appropriate list (mg_labels or sub_labels) and update all instances of its label in the dictionary sections (mg_subs_dict, sub_rg_dict, rg_resources_dict). To change the resources associated with a resource group, update the corresponding entry in the rg_resources_dict section.
 
 Remember to ensure that the JSON file is valid after making changes. You can use a JSON validator tool to check this.
-
-Running the Script
-To run the script after making updates, use the following command in your terminal:
-
-bash
-Copy code
-python diagram.py
-This will generate the diagrams as PNG files in the same directory as the script.
-
-Further Reading
-For more information on the Diagrams library and the Azure services it supports, refer to the Diagrams documentation.
